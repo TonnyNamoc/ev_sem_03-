@@ -5,6 +5,7 @@ export const productCreateSchema = Joi.object({
     description: Joi.string().allow("").max(5000),
     price: Joi.number().precision(2).min(0).required(),
     stock: Joi.number().integer().min(0).required(),
+    image_url: Joi.string().uri().optional(), // opcional (si no se sube archivo)
 });
 
 export const productUpdateSchema = Joi.object({
